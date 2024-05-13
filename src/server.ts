@@ -14,7 +14,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors())
 
-app.use("/api",shortUrl);
+app.use("/api", shortUrl);
+
+app.get('/', (req: express.Request,
+    res: express.Response) => {
+  res.send("Website working")
+})
 
 app.listen(port, () => {
   console.log("server running");
